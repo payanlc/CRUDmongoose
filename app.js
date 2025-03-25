@@ -7,7 +7,7 @@ app.set("view engine","ejs")
 app.use(express.json())
 app.use(express.urlencoded({extended:false}));
 
-mongoose.connect("mongodb+srv://admin:5tzwOmi8FGUwj9uR@backenddb.sut3l.mongodb.net/Node-API?retryWrites=true&w=majority&appName=BackendDB")
+mongoose.connect(MIMONGO)
 .then (()=>{
     console.log("Conectado exitosamente");
 })
