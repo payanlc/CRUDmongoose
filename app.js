@@ -15,8 +15,8 @@ mongoose.connect(process.env.MIMONGO)
     console.log("Fallo en la conexion a la ND")
 });
 
-app.listen(3000, ()=> {
-    console.log(" Server corriendo en http://localhost:"+PORT);
+app.listen(PORT, ()=> {
+    console.log(" Server corriendo en PUERTO "+PORT);
 
 });
 
