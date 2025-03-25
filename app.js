@@ -1,22 +1,23 @@
 const express=require("express")
 const app=express()
 const mongoose=require('mongoose')
+require('dotenv').config()
 const PORT=process.env.PORT ||3000;
 app.set("view engine","ejs")
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}));
 
-mongoose.connect("mongodb+srv://admin:5tzwOmi8FGUwj9uR@backenddb.sut3l.mongodb.net/Node-API?retryWrites=true&w=majority&appName=BackendDB")
+mongoose.connect(process.env.URL_DB_MONGO)
 .then (()=>{
     console.log("Conectado exitosamente");
 })
 .catch(()=>{
-    console.log("Fallo en la conexion a la ND")
+    console.log("Fallo en la conexion a la Base de Datos")
 });
 
 app.listen(3000, ()=> {
-    console.log(" Server corriendo en http://localhost:"+PORT);
+    console.log(" Server corriendo en puerto: "+PORT);
 
 });
 
