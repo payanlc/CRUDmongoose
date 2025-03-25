@@ -17,7 +17,7 @@ mongoose.connect(process.env.URL_DB_MONGO)
 });
 
 app.listen(3000, ()=> {
-    console.log(" Server corriendo en puerto: "+PORT);
+    console.log(" Server corriendo en PORT "+PORT);
 
 });
 
