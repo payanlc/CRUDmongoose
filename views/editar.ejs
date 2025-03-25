@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+</head>
+<body>
+    <h1>Editar</h1>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+
+</head>
+<body>
+<h1>Clientes</h1>
+
+<form action="/editar/<%= cliente._id %>" method="post">
+    Nombre: <input type="text" name="nombre" id="nombre" value="<%= cliente.nombre %>">
+    Apellido: <input type="text" name="apellido" id="apellido" value="<%= cliente.apellido %>">
+    Numero de Cliente: <input type="number" name="numero_c" id="numero_c" value="<%= cliente.numero_c %>">
+    Fecha de captura: <input type="date" name="fecha" id="fecha" value="<%= cliente.fecha %>">
+    <input type="submit" value="Guardar">
+
+</form>
+    
+</body>
+</html>
