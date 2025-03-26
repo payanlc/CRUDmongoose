@@ -1,30 +1,36 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include('head.ejs') %>
     <title>Clientes</title>
 
 </head>
 <body>
-<h1>Clientes</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-4"> </div>
+            <div class="col-6">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Clientes</h5>
+                        <form action="/" method="post">
+                        <label for=""> Nombre: </label> <input type="text" name="nombre" id="nombre">
+                            <label>Apellido:</label> <input type="text" name="apellido" id="apellido">
+                            <label>Numero de Cliente:</label>  <input type="number" name="numero_c" id="numero_c">
+                            <label>Fecha de captura:</label> <input type="date" name="fecha" id="fecha">
+                            <input class="btn btn-primary" type="submit" value="Capturar">
 
-<form action="/" method="post">
-    Nombre: <input type="text" name="nombre" id="nombre">
-    Apellido: <input type="text" name="apellido" id="apellido">
-    Numero de Cliente: <input type="number" name="numero_c" id="numero_c">
-    Fecha de captura: <input type="date" name="fecha" id="fecha">
-    <input type="submit" value="Capturar">
-
-</form>
-<table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<table border="2px" class="table table-striped ">
     <thead>
-        <th>Nombre</th><th>Apellido</th><th>Numero de Cliente</th><th>Fecha </th><th>Editar</th><th>Borrar</th>
+        <th>Nombre</th><th>Apellido</th><th>Número de Cliente</th><th>Fecha </th><th>Editar</th><th>Borrar</th>
     </thead>
     <tbody>
         <%  clientes.forEach((cliente)=>{ %>
         <tr> <td> <%=cliente.nombre%></td><td><%= cliente.apellido %></td>
-            <td> <%=cliente.numero_c %></td><td><%= cliente.fecha %> </td>
+            <td> <%=cliente.numero_c %></td><td><%= cliente.fecha.toLocaleDateString('es-MX') %> </td>
             <td> <a href="/borrar/<%=cliente._id%>">Borrar</a>  </td>
             <td> <a href="/editar/<%=cliente._id%>">Editar</a>  </td>
         </tr>

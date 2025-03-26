@@ -2,7 +2,7 @@ const express=require("express")
 const app=express()
 const mongoose=require('mongoose')
 require('dotenv').config()
-const PORT=process.env.PORT ||3000;
+const PORT=process.env.PORT || 3000;
 app.set("view engine","ejs")
 
 app.use(express.json())
@@ -16,7 +16,7 @@ mongoose.connect(process.env.URL_DB_MONGO)
     console.log("Fallo en la conexion a la Base de Datos")
 });
 
-app.listen(3000, ()=> {
+app.listen(PORT, ()=> {
     console.log(" Server corriendo en PORT "+PORT);
 
 });
