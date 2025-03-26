@@ -30,7 +30,7 @@
     <tbody>
         <%  clientes.forEach((cliente)=>{ %>
         <tr> <td> <%=cliente.nombre%></td><td><%= cliente.apellido %></td>
-            <td> <%=cliente.numero_c %></td><td><%= cliente.fecha.toLocaleDateString('es-MX') %> </td>
+            <td> <%=cliente.numero_c %></td><td><%= cliente.fecha %> </td>
             <td> <a href="/borrar/<%=cliente._id%>">Borrar</a>  </td>
             <td> <a href="/editar/<%=cliente._id%>">Editar</a>  </td>
         </tr>
