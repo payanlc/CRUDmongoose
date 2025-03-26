@@ -9,7 +9,7 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Clientes</h5>
-                    <form action="/" method="post">
+                    <form action="/editar/<%=cliente._id%>" method="post">
                     <label for=""> Nombre: </label> <input type="text" name="nombre" id="nombre" value="<%= cliente.nombre %>">
                         <label>Apellido:</label> <input type="text" name="apellido" id="apellido" value="<%= cliente.apellido %>">
                         <label>Numero de Cliente:</label>  <input type="number" name="numero_c" id="numero_c" value="<%= cliente.numero_c %>">
